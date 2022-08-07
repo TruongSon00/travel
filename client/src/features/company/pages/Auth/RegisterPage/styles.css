@@ -1,0 +1,60 @@
+.company-register__body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #222d32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-register__container {
+  width: 70%;
+  /* height: 90%; */
+  background-color: #1a2226;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.company-register__key {
+  height: 10rem;
+  font-size: 8rem;
+  line-height: 10rem;
+  color: #0db8de;
+}
+
+.company-register__title {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.company-register__form {
+  margin-top: 3rem;
+}
+
+.company-register__preview-avt {
+  width: 100%;
+  height: 15rem;
+  margin-bottom: 1rem;
+}
+
+.company-register__preview-avt img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.company-register__choose-file {
+  cursor: pointer;
+}
+
+.company-register__choose-file input {
+  display: none;
+}
+
+.company-register__choose-file div {
+  color: #fff;
+  font-size: 1.6rem;
+}

@@ -1,0 +1,41 @@
+.admin-home__menu {
+  text-align: right;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.admin-home__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-home__title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.admin-home__user {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.admin-home__content {
+  color: #333;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-home__content-icon {
+  animation: rotating 5s linear infinite;
+}

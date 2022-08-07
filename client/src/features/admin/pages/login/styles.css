@@ -1,0 +1,32 @@
+.admin-login__body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #222d32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-login__container {
+  width: 35%;
+  height: 70%;
+  background-color: #1a2226;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.admin-login__key {
+  height: 10rem;
+  font-size: 8rem;
+  line-height: 10rem;
+  color: #0db8de;
+  margin-top: 1rem;
+}
+
+.admin-login__title {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
