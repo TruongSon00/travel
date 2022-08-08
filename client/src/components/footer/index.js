@@ -54,9 +54,9 @@ function Footer(props) {
               Created By
               <Box component="span" sx={{ color: "#daa15e" }}>
                 {" "}
-                Mr.Hoang{" "}
+                Mr.Son{" "}
               </Box>
-              | Hoangpbgch190102@fpt.edu.vn
+              |soi30082000@gmail.com
             </Box>
           </Grid>
         </Grid>
