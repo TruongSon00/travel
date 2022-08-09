@@ -1,1 +1,2 @@
-export const URL_API = "https://travel-3008.herokuapp.com/api";
+const host = process.env.host || 'http://localhost:5000'
+export const URL_API = `${host}/api`;
