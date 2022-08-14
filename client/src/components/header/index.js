@@ -74,6 +74,14 @@ function Header(props) {
     handleMenuClose();
   };
 
+  const handleClickTransaction = () => {
+    if (loginStatus)
+      navigate("/transaction-history")
+    else
+      alert('Please login before book tour!')
+
+  }
+
   const handelClick = (title) => {
     if (title === "history") {
       navigate("/history");
@@ -95,6 +103,16 @@ function Header(props) {
             Places to go in Vietnam
             <div className="menu_tour">
               <ul className="menu_list">
+                <li className="menu_item">
+                  <Link
+                    className="link"
+                    to={{
+                      pathname: "/tours",
+                    }}
+                  >
+                    ALL TOURS
+                  </Link>
+                </li>
                 <li className="menu_item">
                   <Link
                     className="link"
@@ -131,9 +149,10 @@ function Header(props) {
               </ul>
             </div>
           </div>
-          <div className="header__link" onClick={() => handelClick("history")}>
-            Lịch Sử
+          <div className="header__link" onClick={() => handleClickTransaction()}>
+            Transaction History
           </div>
+
           {/* <div className="header__link" onClick={() => handelClick("nature")}>
             Thiên Nhiên
           </div> */}
@@ -213,6 +232,6 @@ function Header(props) {
       </Container>
     </Box>
   );
-}
 
+}
 export default Header;

@@ -26,7 +26,7 @@
 .header__link-tour:hover .menu_tour {
   /* display: block; */
   opacity: 1;
-  height: 11rem;
+  height: 15rem;
   top: 7rem;
   transition: all 0.2s ease;
 }

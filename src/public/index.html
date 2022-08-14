@@ -16,8 +16,18 @@
 
 
     <script>
-        // var name = "<%= user %>";
-        // console.log(name);
+        function doSomething(callback) {
+
+            return callback('stuff', 'goes', 'here');
+        }
+
+        function foo(a, b, c) {
+            // I'm the callback
+            return a + " " + b + " " + c;
+        }
+
+        const test = doSomething(foo)
+        console.log(test);
     </script>
 </body>
 

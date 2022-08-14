@@ -58,14 +58,19 @@ function TourPage(props) {
             return tour.region === "Miền Trung";
           });
           setTours(newTours);
-        } else {
+        }
+        else if (param._place === "southern_vietnam") {
           const newTours = data.filter((tour) => {
             return tour.region === "Miền Nam";
           });
           setTours(newTours);
         }
+        else {
+          const newTours = data
+          setTours(newTours);
+        }
       }
-    };
+    }
 
     getTours();
   }, [param._place]);
@@ -92,8 +97,8 @@ function TourPage(props) {
             param._place === "northern_vietnam"
               ? "https://cdn.cnn.com/cnnnext/dam/assets/170606122114-vietnam---travel-destination--shutterstock-168342398.jpg"
               : param._place === "center_vietnam"
-              ? "https://dulichvietnam.online/wp-content/uploads/2017/01/du-lich-duyen-hai-nam-trung-bo-5.jpg"
-              : "http://6.img.izshop.vn/tv31/images/1(36).jpg"
+                ? "https://dulichvietnam.online/wp-content/uploads/2017/01/du-lich-duyen-hai-nam-trung-bo-5.jpg"
+                : "http://6.img.izshop.vn/tv31/images/1(36).jpg"
           }
           alt=""
           style={{ width: "100%", height: "70vh", objectFit: "cover" }}
@@ -108,8 +113,10 @@ function TourPage(props) {
                 {param._place === "northern_vietnam"
                   ? "Du lịch Bắc Bộ"
                   : param._place === "center_vietnam"
-                  ? "Du lịch Trung Bộ"
-                  : "Du lịch Nam Bộ"}
+                    ? "Du lịch Trung Bộ"
+                    : param._place === "southern_vietnam"
+                      ? "Du lịch Nam Bộ"
+                      : 'Du lịch Việt Nam'}
               </Box>
             </Grid>
             <Grid container sx={{ mb: 2 }}>
