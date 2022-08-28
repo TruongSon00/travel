@@ -19,7 +19,7 @@ const updateTour = async (req, res) => {
     const id = req.id
     const { tourId, title, city, region, time, dateStart,
         code, transport, introduction, service, program,
-        price, avaiableTour, totalTour, saleOff } = req.body
+        price, avaiableTour, totalTour, saleOff, category, accompanyingService, introcontent } = req.body
 
     // -------- get thumbnail ---------
     const tour = await tourModel.findById(tourId)
@@ -34,7 +34,8 @@ const updateTour = async (req, res) => {
     // ------- check info --------
     if (!tourId || !title || !city || !region || !time || !dateStart
         || !code || !transport || !introduction || !service || !program
-        || !price || !avaiableTour || !totalTour || !saleOff) {
+        || !price || !avaiableTour || !totalTour || !saleOff ||
+        !category|| !accompanyingService|| !introcontent|| !thumbnail) {
         removeImg(req.file)
         return res.status(400).send({ ...msgErrMissInfo })
     }
@@ -54,7 +55,8 @@ const updateTour = async (req, res) => {
         {
             title, city, region, time, dateStart,
             code, transport, introduction, service, program: JSON.parse(program),
-            thumbnail, price, avaiableTour, totalTour, saleOff
+            thumbnail, price, avaiableTour, totalTour, saleOff,
+            category, accompanyingService, introcontent, thumbnail
         },
         { new: true },
         (err, tour) => {

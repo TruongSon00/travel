@@ -1,11 +1,11 @@
 const { msgErrDatabase } = require('../../constants')
 const userModel = require('../../models/user.model')
-const { verify } = require('../../verify')
+const { verifyUser } = require('../../verify')
 
 const home = require('express')()
 
 
-home.get('/', verify, (req, res) => {
+home.get('/', verifyUser, (req, res) => {
     const { id, role } = req
     userModel.findById(id)
         .then(user => {

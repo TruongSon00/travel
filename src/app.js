@@ -2,16 +2,17 @@ const express = require('express')
 const app = express()
 const http = require('http')
 const cors = require('cors')
+const path = require('path');
 require('dotenv').config({ path: __dirname + '/.env' })
 const db = require('./config/connect')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 5000
 app.use(express.static(__dirname + '/uploads'));
+app.use(express.static(__dirname + '/controler-company/test'));
 const router = require('./routers')
 const routerAdmin = require('./routers-admin')
 const routerCompany = require('./routers-company')
-const path = require('path');
 
 db()
 app.use(cookieParser())

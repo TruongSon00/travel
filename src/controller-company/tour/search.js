@@ -12,7 +12,8 @@ const search = async (req, res) => {
     //  --------- check by city name -------
 
     let tourPrepare = showTour(
-        { userId: ObjectId(id), "title": { $regex: key, $options: 'i' } },
+        { userId: ObjectId(id), $or: [{"category": { $regex: key, $options: 'i' }},
+                                    {"city": { $regex: key, $options: 'i' }}] },
         { auth: 1, createdAt: -1 })
 
     try {

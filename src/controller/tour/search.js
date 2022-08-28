@@ -7,7 +7,9 @@ const search = async (req, res) => {
         return res.status(400).send(msgErrMissInfo)
 
     //  --------- check by title name -------
-    const tourPrepare = showTour({ "title": { $regex: key, $options: 'i' }, auth: true, active: true }, { createdAt: -1 })
+    const tourPrepare = showTour({ $or: [{"category": { $regex: key, $options: 'i' }},
+                                {"city": { $regex: key, $options: 'i' }}], 
+                                auth: true, active: true }, { createdAt: -1 })
 
     try {
         const tours = await tourPrepare.exec()

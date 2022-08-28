@@ -25,7 +25,7 @@ const addTour = (req, res) => {
     const { title, city, region, time, dateStart,
         code, transport, introduction, service,
         program, price, avaiableTour, totalTour,
-        saleOff } = req.body
+        saleOff ,category, accompanyingService, introContent} = req.body
 
     // ----- check info ---------
     if (!title || !city || !region || !time || !dateStart
@@ -39,7 +39,9 @@ const addTour = (req, res) => {
     const newTour = new tourModel({
         userId: id, title, city, region, time, dateStart
         , code, transport, introduction, service,
-        program: JSON.parse(program), thumbnail, price, avaiableTour, totalTour, saleOff
+        program: JSON.parse(program), thumbnail, 
+        price, avaiableTour, totalTour, saleOff,
+        category,accompanyingService, introContent
     })
     newTour.save()
         .then(tour => res.status(200).send({ ...msgSuccesAdd, tour }))

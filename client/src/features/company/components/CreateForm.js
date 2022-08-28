@@ -72,6 +72,8 @@ function CreateForm(props) {
     formData.append("introduction", [1, 2, 4]);
     formData.append("avaiableTour", totalTour);
     formData.append("thumbnail", selectedFile);
+    formData.append("thumbnail", selectedFile);
+    formData.append("thumbnail", selectedFile);
     formData.append("title", title);
     formData.append("dateStart", dateStart);
     formData.append("totalTour", totalTour);

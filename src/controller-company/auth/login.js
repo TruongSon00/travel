@@ -32,7 +32,7 @@ const login = async (req, res) => {
         if (!company)
             return res.status(400).send({ ...msgErrLogin })
 
-        const checkPassword = await bcrypt.compare(password, company.password)
+        const checkPassword =  await bcrypt.compare(password, company.password)
         if (!checkPassword || company.role != 2)
             return res.status(400).send({ ...msgErrLogin })
 
